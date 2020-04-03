@@ -1,13 +1,14 @@
 <h2>Challenges <a href="">(+)</a></h2>
-<ul>
+
+<div>
     {% for challenge in challenges %}
-    <li>
-        <a href="">
-            <div>
-                {{ challenge.image_url }}
-                {{ challenge.name }}
-            </div>
-        </a>
-    </li>
+    <a href="{% url 'challenge_detail' pk=challenge.pk %}">
+        <div>
+            <img src="{{ challenge.image_url }}" alt="image unavailable" width="200px" height="200px">
+        </div>
+        <div>
+            {{ challenge.name }}
+        </div>
+    </a>
     {% endfor %}
-</ul>
+</div>
