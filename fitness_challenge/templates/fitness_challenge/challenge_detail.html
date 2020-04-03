@@ -1,0 +1,15 @@
+<h1>{challenge.name}</h1>
+<h3>Circuit Exercises: <a href="">(+)</a></h3>
+<ul>
+    {% for exercise in exercises %}
+    <li>
+        <a href="">
+            <div>
+                {{ exercise.name }}
+                {{ exercise.image_url }}
+                {{ exercise.description }}
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
