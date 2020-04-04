@@ -31,3 +31,25 @@ def exercise_create(request):
     else:
         form = ExerciseForm()
     return render(request, 'fitness_challenge/exercise_form.html', {'form': form})
+
+def challenge_edit(request, pk):
+    challenge = Challenge.objects.get(pk=pk)
+    if request.method == "POST":
+        form = ChallengeForm(request.POST, instance=challenge)
+        if form.is_valid():
+            challenge = form.save()
+            return redirect('challenge_detail', pk=challenge.pk)
+    else:
+        form = ChallengeForm(instance=challenge)
+    return render(request, 'fitness_challenge/challenge_form.html', {'form': form})
+
+def exercise_edit(request, pk):
+    exercise = Exercise.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = ExerciseForm(request.POST, instance=exercise)
+        if form.is_valid():
+            exercise = form.save()
+            return redirect('challenge_detail', pk=exercise.challenge.pk)
+    else:
+        form = ExerciseForm(instance=exercise)
+    return render(request, 'fitness_challenge/exercise_form.html', {'form': form})

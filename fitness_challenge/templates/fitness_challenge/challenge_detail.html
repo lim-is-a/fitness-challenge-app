@@ -9,12 +9,17 @@
         <a href="">
             <div>
                 {{ exercise.name }}
-                <img src="{{ exercise.image_url }}" alt="image unavailable"> 
+                <img src="{{ exercise.image_url }}" alt="image unavailable">
                 {{ exercise.description }}
             </div>
         </a>
     </li>
     {% endfor %}
 </ul>
+<footer>
+    <p>
+        To edit challenge name or image click <a href="{% url 'challenge_edit' pk=challenge.pk %}">HERE</a>, to edit exercise circuit click <a href="{% url 'exercise_edit' pk=exercise.pk %}">HERE</a>.
+    </p>
+</footer>
 
 {% endblock %}
