@@ -1,7 +1,7 @@
 {% extends 'fitness_challenge/base.html' %}
 {% block content %}
 
-<h2>Challenges <a href="">(+)</a></h2>
+<h2>Challenges <a href="{% url 'challenge_create' %}">(+)</a></h2>
 
 <div>
     {% for challenge in challenges %}
