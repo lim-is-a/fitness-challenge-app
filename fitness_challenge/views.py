@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .models import Challenge, Exercise
-from .forms import ChallengeForm
+from .forms import ChallengeForm, ExerciseForm
 # Create your views here.
 
 def challenge_list(request):
@@ -21,3 +21,13 @@ def challenge_create(request):
     else:
         form = ChallengeForm()
     return render(request, 'fitness_challenge/challenge_form.html', {'form': form})
+
+def exercise_create(request):
+    if request.method == 'POST':
+        form = ExerciseForm(request.POST)
+        if form.is_valid():
+            exercise = form.save()
+            return redirect('challenge_detail', pk=challenge.pk)
+    else:
+        form = ExerciseForm()
+    return render(request, 'fitness_challenge/exercise_form.html', {'form': form})
