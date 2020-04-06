@@ -1,0 +1,28 @@
+[
+    {
+        "model": "fitness_challenge.Challenge",
+        "pk":1,
+        "fields":{
+            "name": "15 min",
+            "image_url": " https://lh3.googleusercontent.com/proxy/Lr5uiNoPdukjvynREK3M0t1OQFCIiiapXGyP2wfn36hykGH5qMxJguaQ9ODdiTecIj-BxNBsMEGczsd7iYWeJjya"
+        }
+    },
+    {
+        "model": "fitness_challenge.Challenge",
+        "pk":2,
+        "fields":{
+            "name": "Beginners Challenge",
+            "image_url": "https://www.phillymag.com/wp-content/uploads/sites/3/2017/03/iStock-501776792.jpg "
+        }
+    },
+    {
+        "model": "fitness_challenge.Exercise",
+        "pk":1,
+        "fields":{
+            "name": "Push-Ups",
+            "image_url": " https://hackster.imgix.net/uploads/attachments/1077094/push-up-pose-vector_XyQCV99h7B.jpg?auto=compress%2Cformat&w=680&h=510&fit=max",
+            "description": "Lay on the floor arms at your side, tighten your core, then push your body up. ",
+            "challenge": 1
+        }
+    }
+]
