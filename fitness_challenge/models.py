@@ -16,3 +16,17 @@ class Exercise(models.Model):
 
     def __str__(self):
         return f'{self.name}{self.image_url}{self.description}'
+
+class Result(models.Model):
+    challenge_name = models.ForeignKey(Challenge, on_delete=models.CASCADE, related_name='challengeResult')
+    name = models.CharField(max_length=100)
+    date = models.DateField(auto_now=False)
+    time = models.DurationField()
+    avg_hr = models.IntegerField(null = True)
+    max_hr = models.IntegerField(null= True)
+    cals_burned = models.IntegerField(null = True)
+    note = models.CharField(max_length=1000)
+
+    def __str__(self):
+
+        return f'{self.name}{self.challenge_name}{self.time}'
