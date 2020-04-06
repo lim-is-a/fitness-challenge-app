@@ -1,6 +1,6 @@
 from django.urls import path
+from rest_framework import routers
 from . import views
-from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
     path('challenges', views.ChallengeList.as_view(), name='challenge_list'),

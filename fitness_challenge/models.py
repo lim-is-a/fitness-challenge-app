@@ -11,7 +11,7 @@ class Challenge(models.Model):
 class Exercise(models.Model):
     name = models.CharField(max_length=100)
     image_url = models.CharField(max_length=500)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=700)
     challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE, related_name='exerciseList')
 
     def __str__(self):

@@ -3,6 +3,7 @@ from .models import Challenge, Exercise
 
 class ChallengeSerializer(serializers.HyperlinkedModelSerializer):
     exerciseList = serializers.HyperlinkedRelatedField(
+        view_name = 'exercise_detail',
         many=True,
         read_only=True
     )
@@ -12,11 +13,10 @@ class ChallengeSerializer(serializers.HyperlinkedModelSerializer):
 
 class ExerciseSerializer(serializers.HyperlinkedModelSerializer):
     challenge = serializers.HyperlinkedRelatedField(
-        view_name = challenge_detail, 
+        view_name = 'challenge_detail', 
         many = False, 
         read_only = True, 
-        queryset = Challenge.objects.all(),
     )
     class Meta:
         model = Exercise
-        fields = ('id', 'name', 'image_url', 'description', 'challenge', 'challenge')
+        fields = ('id', 'name', 'image_url', 'description', 'challenge')
