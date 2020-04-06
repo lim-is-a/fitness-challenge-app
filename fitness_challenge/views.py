@@ -43,13 +43,13 @@ def challenge_edit(request, pk):
         form = ChallengeForm(instance=challenge)
     return render(request, 'fitness_challenge/challenge_form.html', {'form': form})
 
-def exercise_edit(request, pk):
-    exercise = Exercise.objects.get(pk=pk)
-    if request.method == 'POST':
-        form = ExerciseForm(request.POST, instance=exercise)
-        if form.is_valid():
-            exercise = form.save()
-            return redirect('challenge_detail', pk=exercise.challenge.pk)
-    else:
-        form = ExerciseForm(instance=exercise)
-    return render(request, 'fitness_challenge/exercise_form.html', {'form': form})
+# def exercise_edit(request, pk):
+#     exercise = Exercise.objects.get(pk=pk)
+#     if request.method == 'POST':
+#         form = ExerciseForm(request.POST, instance=exercise)
+#         if form.is_valid():
+#             exercise = form.save()
+#             return redirect('challenge_detail', pk=challenge.exercise.pk)
+#     else:
+#         form = ExerciseForm(instance=exercise)
+#     return render(request, 'fitness_challenge/exercise_form.html', {'form': form})
