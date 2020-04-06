@@ -1,0 +1,18 @@
+{% extends 'fitness_challenge/base.html' %}
+{% block content %}
+
+<h2>Results <a href="{% url 'result_create' %}">(+)</a></h2>
+
+<div>
+    {% for result in results %}
+    <a href="{% url 'result_detail' pk=result.pk %}">
+        <div>
+            <h4>{{ result.challenge_name }}</h4>
+            {{ result.date }}
+            {{ result.time }}
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}
