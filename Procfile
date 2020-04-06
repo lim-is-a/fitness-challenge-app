@@ -1,0 +1,1 @@
+web: gunicorn fitness_challenge_django.wsgi --log-file -
