@@ -31,18 +31,19 @@ export default class ChallengeList extends Component {
         return (
             <div>
                 <h1>Available Challenges</h1>
-                {/* {
+                {
                     this.state.challenges.map(challenge =>(
                         <div key={challenge.id}>
                             <Link to={`/challenge/${challenge.id}`}>
                                 <div>
                                     {challenge.name}
-                                    {challenge.image_url}
+                                    <img src={challenge.image_url} alt="image unavailable"/>
+                                    
                                 </div>
                             </Link>
                         </div>
                     ))
-                } */}
+                }
             </div>
         )
     }
