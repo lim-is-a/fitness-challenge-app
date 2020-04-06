@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class Challenge(models.Model):
@@ -22,8 +23,8 @@ class Result(models.Model):
     name = models.CharField(max_length=100)
     date = models.DateField(auto_now=False)
     time = models.DurationField()
-    avg_hr = models.IntegerField(null = True)
-    max_hr = models.IntegerField(null= True)
+    avg_hr = models.IntegerField(validators=[MinValueValidator(30), MaxValueValidator(300)], null = True)
+    max_hr = models.IntegerField(validators=[MinValueValidator(30), MaxValueValidator(300)], null= True)
     cals_burned = models.IntegerField(null = True)
     note = models.CharField(max_length=1000)
 
