@@ -1,12 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
 from . import views
 
+router = routers.DefaultRouter()
+router.register('challenges', views.ChallengeView)
+router.register('exerciseList', views.ExerciseView)
+router.register('results', views.ResultView)
+
 urlpatterns = [
-    path('challenges', views.ChallengeList.as_view(), name='challenge_list'),
-    path('challenges/<int:pk>', views.ChallengeDetail.as_view(), name='challenge_detail'),
-    path('exerciseList', views.ExerciseList.as_view(), name='exercise_list'),
-    path('exerciseList/<int:pk>', views.ExerciseDetail.as_view(), name='exercise_detail'),
-    path('results', views.ResultList.as_view(), name='result_list'),
-    path('results/<int:pk>', views.ResultDetail.as_view(), name='result_detail'),
+    path('', include(router.urls)),
 ]
