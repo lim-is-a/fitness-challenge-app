@@ -53,3 +53,7 @@ def challenge_edit(request, pk):
 #     else:
 #         form = ExerciseForm(instance=exercise)
 #     return render(request, 'fitness_challenge/exercise_form.html', {'form': form})
+
+def challenge_delete(request, pk):
+    Challenge.objects.get(id=pk).delete()
+    return redirect('challenge_list')

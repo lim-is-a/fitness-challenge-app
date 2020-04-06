@@ -18,8 +18,9 @@
 </ul>
 <footer>
     <p>
-        To edit challenge name or image click <a href="{% url 'challenge_edit' pk=challenge.pk %}">HERE</a>, to edit exercise circuit click <a href="">HERE</a>.
+        To edit challenge name or image click <a href="{% url 'challenge_edit' pk=challenge.pk %}">HERE</a>, to edit exercise circuit click <a href="">HERE</a>, 
     </p>
+    <p>or <a href="{% url 'challenge_delete' pk=challenge.pk %}">Delete Challenge.</a></p>
 </footer>
 
 {% endblock %}

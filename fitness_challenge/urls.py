@@ -8,4 +8,5 @@ urlpatterns = [
     path('challenges/<int:pk>/edit', views.challenge_edit, name='challenge_edit'),
     path('exerciseList/new', views.exercise_create, name='exercise_create'),
     # path('exerciseList/<int:pk>/edit', views.exercise_edit, name='exercise_edit'),
+    path('challenges/<int:pk>/delete', views.challenge_delete, name='challenge_delete'),
 ]
