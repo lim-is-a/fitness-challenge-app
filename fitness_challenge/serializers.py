@@ -15,7 +15,8 @@ class ExerciseSerializer(serializers.HyperlinkedModelSerializer):
     challenge = serializers.HyperlinkedRelatedField(
         view_name = 'challenge_detail', 
         many = False, 
-        read_only = True, 
+        read_only = False, 
+        queryset = Challenge.objects.all(),
     )
     class Meta:
         model = Exercise
