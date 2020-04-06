@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Challenge, Exercise
+from .models import Challenge, Exercise, Result
 
 class ChallengeSerializer(serializers.HyperlinkedModelSerializer):
     exerciseList = serializers.HyperlinkedRelatedField(
@@ -21,3 +21,14 @@ class ExerciseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Exercise
         fields = ('id', 'name', 'image_url', 'description', 'challenge')
+
+class ResultSerializer(serializers.HyperlinkedModelSerializer):
+    challenge = serializers.HyperlinkedRelatedField(
+        view_name = 'challenge_detail', 
+        many = False, 
+        read_only = False, 
+        queryset = Challenge.objects.all(),
+    )
+    class Meta:
+        model = Result
+        fields = ('id', 'challenge', 'name', 'date', 'time', 'avg_hr','max_hr', 'cals_burned', 'note')
