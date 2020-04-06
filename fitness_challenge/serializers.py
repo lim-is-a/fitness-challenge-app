@@ -23,7 +23,7 @@ class ExerciseSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'image_url', 'description', 'challenge')
 
 class ResultSerializer(serializers.HyperlinkedModelSerializer):
-    challenge = serializers.HyperlinkedRelatedField(
+    challenge_name = serializers.HyperlinkedRelatedField(
         view_name = 'challenge_detail', 
         many = False, 
         read_only = False, 
@@ -31,4 +31,4 @@ class ResultSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Result
-        fields = ('id', 'challenge', 'name', 'date', 'time', 'avg_hr','max_hr', 'cals_burned', 'note')
+        fields = ('id', 'challenge_name', 'name', 'date', 'time', 'avg_hr','max_hr', 'cals_burned', 'note')
