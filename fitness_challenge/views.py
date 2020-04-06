@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .serializers import ChallengeSerializer, ExerciseSerializer
-from .models import Challenge, Exercise
+from .serializers import ChallengeSerializer, ExerciseSerializer, ResultSerializer
+from .models import Challenge, Exercise, Result
 
 class ChallengeList(generics.ListCreateAPIView):
     queryset = Challenge.objects.all()
@@ -17,3 +17,11 @@ class ExerciseList(generics.ListCreateAPIView):
 class ExerciseDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Exercise.objects.all()
     serializer_class = ExerciseSerializer
+
+class ResultList(generics.ListCreateAPIView):
+    queryset = Result.objects.all()
+    serializer_class = ResultSerializer
+
+class ResultDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Result.objects.all()
+    serializer_class = ResultSerializer
