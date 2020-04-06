@@ -9,3 +9,11 @@ class ChallengeList(generics.ListCreateAPIView):
 class ChallengeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Challenge.objects.all()
     serializer_class = ChallengeSerializer
+
+class ExerciseList(generics.ListCreateAPIView):
+    queryset = Exercise.objects.all()
+    serializer_class = ExerciseSerializer
+
+class ExerciseDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Exercise.objects.all()
+    serializer_class = ExerciseSerializer
