@@ -50,20 +50,13 @@ export default class Results extends Component {
         })
     }
 
-    submitResultsForm = async () => {
+    submitResultsForm = async (event) => {
+        // prevent default will override the GET and allow the POST req
+        event.preventDefault()
         // This is where I'm going to post the new Result
-        let form = new FormData();
-        form.append("challenge_name", "4");
-        form.append("name", "Lexin");
-        form.append("date", "2020-01-02");
-        form.append("time", "19:00");
-        form.append("avg_hr", "150");
-        form.append("max_hr", "189");
-        form.append("cals_burned", "130");
-        form.append("note", "nop");
 
         try {
-            let request = await axios.post(`/api/v1/results/`, form, { headers: {'Content-Type': 'multipart/form-data' } }).then((res) => {
+            let request = await axios.post(`/api/v1/results/`, this.state.newResult).then((res) => {
                 console.log("result" + JSON.stringify(res.data))
             })
             console.log(request)
