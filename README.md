@@ -1,6 +1,8 @@
 # Fitness Challenge App
 ### Django + React app
 
+There are a lot of people with different brands of fitness watches and each brand has their own app. You can participate in a challenge with people of similar brand, but a common issue is looking for an app where you can engage in a challenge with your family and friends with other brand fitness watches.
+
 This is a fitness challenge app where you can complete any challenge and 
 also add your health stats for the completed challenges. You have the choice of joining an available challenge or creating your own. 
 Anyone & Everyone can participate. 
