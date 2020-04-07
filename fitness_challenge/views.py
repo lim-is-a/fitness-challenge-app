@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from .serializers import ChallengeSerializer, ExerciseSerializer, ResultSerializer
 from .models import Challenge, Exercise, Result
 
+
 class ChallengeView(viewsets.ModelViewSet):
     queryset = Challenge.objects.all()
     serializer_class = ChallengeSerializer
