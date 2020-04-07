@@ -18,7 +18,6 @@ export default class Challenge extends Component {
                 this.setState({
                     challenge: Response.data
                 })
-                console.log("MY state:::: " + JSON.stringify(this.state))
             })
         }
         catch (error) {
