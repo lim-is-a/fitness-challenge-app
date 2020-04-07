@@ -6,16 +6,26 @@ body {
   max-width: 50em;
   margin: auto;
   padding: 2em 1em;
-  background-color: rgba(246, 252, 223, 0.2);
+  background-color: #18181fa9;
+
 }
 nav{
-  background-color: #f50303;
   padding: .5em;
+  text-decoration: none;
+  text-align: right;
+  margin: 14px;
+  background-color: rgba(246, 252, 223, 0.329);
+
 }
-nav a {
-  border: 1px solid rgb(250, 3, 3);
+.navLink {
   margin: .25em;
   padding: .25em;
   text-decoration: none;
+  display: inline-block;
+}
+.appHead {
+  padding: 20px;
+  background-color: #dfdfeb77;
+
 }
 

@@ -12,12 +12,12 @@ class App extends Component {
             <Router>
                 <div className="App">
 
-                    <div>
+                    <div className="appHead">
                         <h1>Fitness Challenge</h1>
-                        <div>
-                            <div><Link to="/">All Challenges</Link></div>
-                            <div><Link to="/results/">Results</Link></div>
-                        </div>
+                        <nav>
+                            <div className="navLink" ><Link to="/">All Challenges</Link></div>
+                            <div className="navLink" ><Link to="/results/">Results</Link></div>
+                        </nav>
                     </div>
 
                     <Switch>
