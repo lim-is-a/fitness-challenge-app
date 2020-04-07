@@ -22,7 +22,7 @@ class Result(models.Model):
     challenge_name = models.ForeignKey(Challenge, on_delete=models.CASCADE, related_name='challengeResult')
     name = models.CharField(max_length=100)
     date = models.DateField(auto_now=False)
-    time = models.DurationField()
+    time = models.CharField(max_length=100)
     avg_hr = models.IntegerField(validators=[MinValueValidator(30), MaxValueValidator(300)], null = True)
     max_hr = models.IntegerField(validators=[MinValueValidator(30), MaxValueValidator(300)], null= True)
     cals_burned = models.IntegerField(null = True)
